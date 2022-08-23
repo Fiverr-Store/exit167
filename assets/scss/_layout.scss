@@ -1,0 +1,57 @@
+/*--------------------------------------------------------------
+# about
+--------------------------------------------------------------*/
+
+.about{
+  padding: 40px 0px 60px 0px;
+  @media only screen and (max-width: 991px) {
+   padding: 30px 0px 40px 0px;
+  }
+  @media only screen and (max-width: 767px) {
+   padding: 20px 0px 30px 0px;
+  }
+  .abt-text{
+    padding-bottom: 30px;
+    text-align: center;
+    @media only screen and (max-width: 767px) {
+     padding-bottom: 20px;
+    }
+    p{
+      font-size: 30px;
+      font-weight: 600;
+      @media only screen and (max-width: 991px) {
+       font-size: 26px;
+      }
+      @media only screen and (max-width: 767px) {
+       font-size: 22px;
+      }
+    }
+  }
+}
+
+/*--------------------------------------------------------------
+# pay-method
+--------------------------------------------------------------*/
+
+.pay-method{
+  background-color: #eee;
+  padding: 50px 0px;
+  text-align: center;
+  @media only screen and (max-width: 767px) {
+   padding: 30px 0px;
+  }
+  h2{
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    @media only screen and (max-width: 991px) {
+     font-size: 26px;
+    }
+    @media only screen and (max-width: 767px) {
+     font-size: 22px;
+    }
+  }
+  p{
+    font-weight: 500;
+  }
+}

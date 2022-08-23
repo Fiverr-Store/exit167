@@ -1,0 +1,36 @@
+/*--------------------------------------------------------------
+# hero-area
+--------------------------------------------------------------*/
+.hero-area{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  @media only screen and (max-width: 991px) {
+   min-height: 80vh;
+  }
+  video {
+    /** Simulationg background-size: cover */
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .hero-inner{
+    position: relative;
+    .logo{
+      height: 150px;
+      @media only screen and (max-width: 991px) {
+       height: 110px;
+      }
+      @media only screen and (max-width: 767px) {
+       height: 90px;
+      }
+    }
+  }
+}

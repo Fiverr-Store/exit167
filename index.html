@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title> exit167 </title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+
+</head>
+
+<body>
+  <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+
+
+  <section class="hero-area">
+    <video id="background-video" playsinline autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+      <source src="assets/img/hero/video.mp4" type="video/mp4">
+    </video>
+    <div class="container">
+      <div class="hero-inner">
+        <img src="assets/img/logo/logo.svg" draggable="false" class="logo" alt="logo">
+      </div><!-- /.hero-inner -->
+    </div><!-- /.container -->
+  </section><!-- /.hero-area -->
+
+  <section class="about">
+    <div class="container">
+      <div class="abt-text">
+        <img src="assets/img/logo/logo.svg" style="height: 90px;" alt="">
+        <p class="pt-1">
+          After sold out Garba & Dandiya nights from 2016, 2017, 2018 & 2019, Exit167 Events is back with Central Illinois’
+          Biggest Bollywood Garba & Dandiya Night of 2022.
+        </p>
+      </div><!-- /.abt-text -->
+      <img src="assets/img/hero/flyer.jpg" class="img-fluid" alt="">
+    </div><!-- /.container -->
+  </section><!-- /.about -->
+
+  <section class="pay-method">
+    <div class="container">
+
+      <div class="pay-box">
+        <h2> Purchase Garba & Dandiya tickets safely and securely via Paypal </h2>
+
+
+        <div id="smart-button-container">
+          <div style="text-align: center;">
+            <div style="margin-bottom: 1.25rem;">
+              <p class="mb-2">Exit167 Events Bollywood Garba & Dandiya Night 2022
+                <span class="text-danger">  **Early bird pricing </span>
+                 <span class="text-danger"> **Kids 8 and under are free </span>
+              </p>
+              <select id="item-options">
+                <option value="1 ticket" price="12">1 ticket - 12 USD</option>
+                <option value="2 tickets" price="24">2 tickets - 24 USD</option>
+                <option value="3 tickets" price="36">3 tickets - 36 USD</option>
+                <option value="4 tickets" price="48">4 tickets - 48 USD</option>
+                <option value="5 tickets" price="60">5 tickets - 60 USD</option>
+              </select>
+              <select style="visibility: hidden" id="quantitySelect"></select>
+            </div>
+            <div id="paypal-button-container"></div>
+          </div>
+        </div>
+
+      </div><!-- /.pay-box -->
+
+    </div><!-- /.container -->
+  </section><!-- /.pay-method -->
+
+  <footer>
+    <div class="container">
+      <span> © 2022  exit167 - All Rights Reserved </span>
+    </div><!-- /.container -->
+  </footer>
+
+
+
+  <div class="page-loader">
+    <div class="lds-grid">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <!--.page-loader-->
+
+
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script
+    src="https://www.paypal.com/sdk/js?client-id=Aaq5x_zwpAK_RF2IkuWOqOE4-8yqF3LJQ_vIdKfMrO7A9bF4MiOi8Fvw5Y4gZvwLIyuiomR5iIFut29l&enable-funding=venmo&currency=USD"
+    data-sdk-integration-source="button-factory"></script>
+  <script>
+    function initPayPalButton() {
+      var shipping = 0;
+      var itemOptions = document.querySelector("#smart-button-container #item-options");
+      var quantity = parseInt();
+      var quantitySelect = document.querySelector("#smart-button-container #quantitySelect");
+      if (!isNaN(quantity)) {
+        quantitySelect.style.visibility = "visible";
+      }
+      var orderDescription = 'Exit167 Events Bollywood Garba & Dandiya Night 2022 **Early bird pricing **Kids 8 and under are free';
+      if (orderDescription === '') {
+        orderDescription = 'Item';
+      }
+      paypal.Buttons({
+        style: {
+          shape: 'rect',
+          color: 'gold',
+          layout: 'vertical',
+          label: 'paypal',
+
+        },
+        createOrder: function (data, actions) {
+          var selectedItemDescription = itemOptions.options[itemOptions.selectedIndex].value;
+          var selectedItemPrice = parseFloat(itemOptions.options[itemOptions.selectedIndex].getAttribute("price"));
+          var tax = (8 === 0 || false) ? 0 : (selectedItemPrice * (parseFloat(8) / 100));
+          if (quantitySelect.options.length > 0) {
+            quantity = parseInt(quantitySelect.options[quantitySelect.selectedIndex].value);
+          } else {
+            quantity = 1;
+          }
+
+          tax *= quantity;
+          tax = Math.round(tax * 100) / 100;
+          var priceTotal = quantity * selectedItemPrice + parseFloat(shipping) + tax;
+          priceTotal = Math.round(priceTotal * 100) / 100;
+          var itemTotalValue = Math.round((selectedItemPrice * quantity) * 100) / 100;
+
+          return actions.order.create({
+            purchase_units: [{
+              description: orderDescription,
+              amount: {
+                currency_code: 'USD',
+                value: priceTotal,
+                breakdown: {
+                  item_total: {
+                    currency_code: 'USD',
+                    value: itemTotalValue,
+                  },
+                  shipping: {
+                    currency_code: 'USD',
+                    value: shipping,
+                  },
+                  tax_total: {
+                    currency_code: 'USD',
+                    value: tax,
+                  }
+                }
+              },
+              items: [{
+                name: selectedItemDescription,
+                unit_amount: {
+                  currency_code: 'USD',
+                  value: selectedItemPrice,
+                },
+                quantity: quantity
+              }]
+            }]
+          });
+        },
+        onApprove: function (data, actions) {
+          return actions.order.capture().then(function (orderData) {
+
+            // Full available details
+            console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+            // Show a success message within this page, e.g.
+            const element = document.getElementById('paypal-button-container');
+            element.innerHTML = '';
+            element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+            // Or go to another URL:  actions.redirect('thank_you.html');
+
+          });
+        },
+        onError: function (err) {
+          console.log(err);
+        },
+      }).render('#paypal-button-container');
+    }
+    initPayPalButton();
+  </script>
+
+
+</body>
+
+
+</html>

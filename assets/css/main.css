@@ -1,0 +1,359 @@
+/*--------------------------------------------------------------
+# base
+--------------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap");
+body {
+  position: relative;
+  font-family: "Quicksand", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #111;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a {
+  -webkit-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+  text-decoration: none;
+}
+a:hover {
+  color: #FFCB05;
+}
+a:focus, a:hover {
+  text-decoration: none;
+}
+
+i,
+span,
+a {
+  display: inline-block;
+}
+
+audio,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+section {
+  overflow: hidden;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  color: inherit;
+}
+
+/*--------------------------------------------------------------
+  ##  Page Loader
+  --------------------------------------------------------------*/
+.page-loader {
+  background-color: #fff;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 99999999;
+}
+
+.lds-grid {
+  display: inline-block;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.lds-grid div {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #FFCB05;
+  -webkit-animation: lds-grid 1.2s linear infinite;
+          animation: lds-grid 1.2s linear infinite;
+}
+
+.lds-grid div:nth-child(1) {
+  top: 8px;
+  left: 8px;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.lds-grid div:nth-child(2) {
+  top: 8px;
+  left: 32px;
+  -webkit-animation-delay: -0.4s;
+          animation-delay: -0.4s;
+}
+
+.lds-grid div:nth-child(3) {
+  top: 8px;
+  left: 56px;
+  -webkit-animation-delay: -0.8s;
+          animation-delay: -0.8s;
+}
+
+.lds-grid div:nth-child(4) {
+  top: 32px;
+  left: 8px;
+  -webkit-animation-delay: -0.4s;
+          animation-delay: -0.4s;
+}
+
+.lds-grid div:nth-child(5) {
+  top: 32px;
+  left: 32px;
+  -webkit-animation-delay: -0.8s;
+          animation-delay: -0.8s;
+}
+
+.lds-grid div:nth-child(6) {
+  top: 32px;
+  left: 56px;
+  -webkit-animation-delay: -1.2s;
+          animation-delay: -1.2s;
+}
+
+.lds-grid div:nth-child(7) {
+  top: 56px;
+  left: 8px;
+  -webkit-animation-delay: -0.8s;
+          animation-delay: -0.8s;
+}
+
+.lds-grid div:nth-child(8) {
+  top: 56px;
+  left: 32px;
+  -webkit-animation-delay: -1.2s;
+          animation-delay: -1.2s;
+}
+
+.lds-grid div:nth-child(9) {
+  top: 56px;
+  left: 56px;
+  -webkit-animation-delay: -1.6s;
+          animation-delay: -1.6s;
+}
+
+@-webkit-keyframes lds-grid {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes lds-grid {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+@-webkit-keyframes blink {
+  50% {
+    color: transparent;
+  }
+}
+@keyframes blink {
+  50% {
+    color: transparent;
+  }
+}
+/*--------------------------------------------------------------
+# hero-area
+--------------------------------------------------------------*/
+.hero-area {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+@media only screen and (max-width: 991px) {
+  .hero-area {
+    min-height: 80vh;
+  }
+}
+.hero-area video {
+  /** Simulationg background-size: cover */
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.hero-area .hero-inner {
+  position: relative;
+}
+.hero-area .hero-inner .logo {
+  height: 150px;
+}
+@media only screen and (max-width: 991px) {
+  .hero-area .hero-inner .logo {
+    height: 110px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .hero-area .hero-inner .logo {
+    height: 90px;
+  }
+}
+
+/*--------------------------------------------------------------
+# about
+--------------------------------------------------------------*/
+.about {
+  padding: 40px 0px 60px 0px;
+}
+@media only screen and (max-width: 991px) {
+  .about {
+    padding: 30px 0px 40px 0px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .about {
+    padding: 20px 0px 30px 0px;
+  }
+}
+.about .abt-text {
+  padding-bottom: 30px;
+  text-align: center;
+}
+@media only screen and (max-width: 767px) {
+  .about .abt-text {
+    padding-bottom: 20px;
+  }
+}
+.about .abt-text p {
+  font-size: 30px;
+  font-weight: 600;
+}
+@media only screen and (max-width: 991px) {
+  .about .abt-text p {
+    font-size: 26px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .about .abt-text p {
+    font-size: 22px;
+  }
+}
+
+/*--------------------------------------------------------------
+# pay-method
+--------------------------------------------------------------*/
+.pay-method {
+  background-color: #eee;
+  padding: 50px 0px;
+  text-align: center;
+}
+@media only screen and (max-width: 767px) {
+  .pay-method {
+    padding: 30px 0px;
+  }
+}
+.pay-method h2 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+@media only screen and (max-width: 991px) {
+  .pay-method h2 {
+    font-size: 26px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .pay-method h2 {
+    font-size: 22px;
+  }
+}
+.pay-method p {
+  font-weight: 500;
+}
+
+/*--------------------------------------------------------------
+# main-footer
+--------------------------------------------------------------*/
+.main-footer {
+  padding: 30px 0px;
+  text-align: center;
+}
+.main-footer p {
+  font-size: 14px;
+}
+.main-footer .social-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  margin-bottom: 5px;
+  /** Medium devices (tablets, 768px and up) **/
+}
+@media (min-width: 768px) {
+  .main-footer .social-nav {
+    display: none;
+  }
+}
+.main-footer .social-nav li {
+  display: inline-block;
+}
+.main-footer .social-nav li:not(:last-child) {
+  margin-right: 4px;
+}
+.main-footer .social-nav li a {
+  text-decoration: none;
+  display: inline-block;
+  color: var(--primary-color);
+  font-size: 18px;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+.main-footer .social-nav li a:hover {
+  opacity: 0.6;
+}
+/*# sourceMappingURL=main.css.map */
