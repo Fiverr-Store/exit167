@@ -184,16 +184,6 @@ h6 a {
     opacity: 0.5;
   }
 }
-@-webkit-keyframes blink {
-  50% {
-    color: transparent;
-  }
-}
-@keyframes blink {
-  50% {
-    color: transparent;
-  }
-}
 /*--------------------------------------------------------------
 # hero-area
 --------------------------------------------------------------*/
@@ -215,6 +205,16 @@ h6 a {
 @media only screen and (max-width: 991px) {
   .hero-area {
     min-height: 80vh;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .hero-area {
+    min-height: 70vh;
+  }
+}
+@media only screen and (max-width: 482px) {
+  .hero-area {
+    min-height: 50vh;
   }
 }
 .hero-area video {
