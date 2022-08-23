@@ -227,22 +227,6 @@ h6 a {
   top: 0;
   left: 0;
 }
-.hero-area .hero-inner {
-  position: relative;
-}
-.hero-area .hero-inner .logo {
-  height: 150px;
-}
-@media only screen and (max-width: 991px) {
-  .hero-area .hero-inner .logo {
-    height: 110px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .hero-area .hero-inner .logo {
-    height: 90px;
-  }
-}
 
 /*--------------------------------------------------------------
 # about

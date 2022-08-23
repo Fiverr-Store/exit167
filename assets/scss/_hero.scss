@@ -27,16 +27,5 @@
     top: 0;
     left: 0;
   }
-  .hero-inner{
-    position: relative;
-    .logo{
-      height: 150px;
-      @media only screen and (max-width: 991px) {
-       height: 110px;
-      }
-      @media only screen and (max-width: 767px) {
-       height: 90px;
-      }
-    }
-  }
+
 }
