@@ -9,6 +9,8 @@
 	}
 
 
+ // WOW active
+ new WOW().init();
 
 
 })();

@@ -10,13 +10,13 @@
   justify-content: center;
   text-align: center;
   @media only screen and (max-width: 991px) {
-   min-height: 80vh;
-  }
-  @media only screen and (max-width: 767px) {
    min-height: 70vh;
   }
+  @media only screen and (max-width: 767px) {
+   min-height: 50vh;
+  }
   @media only screen and (max-width: 482px) {
-   min-height: 40vh;
+   min-height: 30vh;
   }
   video {
     /** Simulationg background-size: cover */

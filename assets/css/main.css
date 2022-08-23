@@ -204,17 +204,17 @@ h6 a {
 }
 @media only screen and (max-width: 991px) {
   .hero-area {
-    min-height: 80vh;
+    min-height: 70vh;
   }
 }
 @media only screen and (max-width: 767px) {
   .hero-area {
-    min-height: 70vh;
+    min-height: 50vh;
   }
 }
 @media only screen and (max-width: 482px) {
   .hero-area {
-    min-height: 40vh;
+    min-height: 30vh;
   }
 }
 .hero-area video {
